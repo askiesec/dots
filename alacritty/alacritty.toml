@@ -1,0 +1,7 @@
+live_config_reload = true
+
+
+[font]
+
+normal.family = "MonaspiceNe Nerd Font Mono"
+size = 12
