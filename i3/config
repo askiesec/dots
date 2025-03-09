@@ -12,9 +12,10 @@ default_border pixel 1
 default_floating_border pixel 0
 
 # Startup
+exec --no-startup-id flameshot &
 exec --no-startup-id $HOME/.fehbg
-exec_always unclutter&
-exec_always dunst&
+exec_always unclutter &
+exec_always dunst &
 exec_always picom --config $HOME/.config/picom/picom.conf &
 
 # Disable mouse accel
@@ -38,10 +39,12 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # Assing stuff
-assign [class="firefox"] $ws2
-assign [class="discord"] $ws4
+assign [class="brave"] $ws2
+assign [class="vesktop"] $ws4
+assign [class="obsidian"] $ws4
 assign [class="Spotify"] $ws6
 assign [class="Code"] $ws3
+assign [class="Thunar"] $ws5
 
 # Default Stuff
 exec --no-startup-id dex --autostart --environment i3
@@ -66,7 +69,7 @@ tiling_drag modifier titlebar
 # Keybinds
 bindsym $mod+Return exec $term
 bindsym $mod+q kill
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun -theme ~/.config/rofi/config.rasi"
 
 # Mov like vim
 set $left h
@@ -100,11 +103,11 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # Workspaces
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
+set $ws1 "1: Web"
+set $ws2 "2: Terminal"
+set $ws3 "3: Code"
+set $ws4 "4: Dashboard"
+set $ws5 "5: File Manager"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -136,10 +139,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # WM
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec $HOME/.config/rofi/powermenu.sh
 
 bar {
-        status_command i3blocks -c $HOME/.config/i3blocks/i3blocks.conf
+  status_command i3blocks -c $HOME/.config/i3blocks/i3blocks.conf
 	position bottom
 	font xft: Sans 9
 }

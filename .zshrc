@@ -125,7 +125,6 @@ alias ip="ip -c"
 alias open="mimeo"
 alias purge="rm -rf"
 alias vim="nvim"
-alias cat="bat"
 
 export PATH=$PATH:"$HOME/.local/bin"
 export LD_PRELOAD=""

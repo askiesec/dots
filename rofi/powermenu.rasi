@@ -1,0 +1,50 @@
+* {
+	bg:				#151515;
+	fg:				#e8e8d3;
+	accent:				#687363;
+	button:				#1c1c1c;
+
+	background-color:		@bg;
+	text-color:			@fg;
+	font:				"Rubik 12"; /* Ajustei a fonte */
+}
+
+window {
+	border-radius:                  7px;
+	width:			    	30%; /* Tamanho mais compacto */
+	padding: 			24px;
+}
+
+listview {
+	columns:                        1;
+	lines:	                        5; /* Ajuste conforme o número de opções */
+	cycle:                          false;
+	dynamic:                        true;
+	layout:                         vertical;
+	spacing:                        10px; /* Melhor separação entre opções */
+}
+
+element {
+	orientation:                    horizontal;
+	padding:                        8px;
+	border-radius:                  6px;
+	background-color:		@button;
+}
+
+element selected {
+	background-color:               @accent;
+	border-radius:                  6px;
+}
+
+element-icon {
+    	size:                           32px; /* Ícones proporcionais */
+    	horizontal-align:	 	0.0;
+    	margin:                         0 8px 0 0;
+}
+
+element-text {
+	font:				"Rubik 12"; /* Fonte ajustada */
+	horizontal-align:               0.0;
+	vertical-align:                 0.5;
+}
+
